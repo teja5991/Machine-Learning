@@ -26,5 +26,3 @@ classification models are classified into:
 5. decision tree classification
 6. random forest classification
 
-so we have a particular dataset named TURNOVER so it is a csv file where it has 10 entities and 15000 rows in which we will be predicting the company turn over whether it is low , high or medium wiht the help of the other attributes in that dataset
-
