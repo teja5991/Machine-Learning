@@ -25,5 +25,3 @@ classification models are classified into:
 4. Naive Bayes
 5. decision tree classification
 6. random forest classification
-
-so in this case we have dataset named TURNOVER which has 10 entites and with the help of the 10 entities we will be predicting the company turn over based on whether it is low, medium or high
