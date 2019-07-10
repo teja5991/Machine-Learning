@@ -1,4 +1,4 @@
-# Machine-Learning
+# Machine-Learning-Projects
 This is about Analysis of the Models performing on a particular Data Set
 
 In machine learning we have three different types of learning
