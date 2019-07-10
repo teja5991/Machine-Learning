@@ -1,0 +1,42 @@
+﻿2. Technical details:
+All the relevant technical literature related to the problem that is attempted for the solution is elaborated below. The flow is divided into three stages. Firstly,  dataset creation, secondly analyzing the dataset and performing tasks, and lastly construction predictive model.
+
+
+
+
+2.1 Dataset creation:
+Dataset creation is being done as mentioned in the assignment question. To choose an option to enter data for a feature is by tossing the coin. In the dataset created we consider if the coinflip=0 consider it as heads otherwise tails. Followed by rolling the dice if heads come up where the variable dice_roll takes randomly generating integer ranging between the maximum number of options a feature can take.Otherwise, if tails appears take the predefined option. A dataset of 50,000 rows is created with 9 columns ('Entity_ID', 'City', 'Marital Status', 'Education', 'Gender', 'Dependencies', 'Entity’s Income', 'Entity’s Family Income','Average Expenditure per Entity per Month') initially.
+
+
+
+
+2.2 Analysing Dataset and Tasks:
+Analysing Dataset is the process of inspecting, cleaning and transforming the data with a goal of achieve a useful information from a given dataset in order to enable us to make suitable decisions. The main function used in performing the tasks are mentioned below:
+(#A) Typical size and shape of training and testing dataset by using .size and .shape
+(#B) .count() to find number of Families the number of dependents are >0
+(#C) .count() of Number of Single and Married Entities
+(#D) .mean() to find entity’s Average Income
+(#E) .mean() to find entity’s Average Family Income
+(#F) .count() to find Number of Single and Married Entities
+(#G) .count() to find Educated and Uneducated entities
+(#H) Entities at the end of the year can make savings financially by subtracting income and      expenditure of the entity
+(#I) Entities at the end of the year are break even financially by checking if Savings==0
+(#J) Entities at the end of the year may need loan financially by checking if Savings<0
+(#K) Entities can afford car loans by checking if Savings>10000
+(#L) Entities can afford car loans by checking if Savings>20000
+(#M) Entities can be advised on Savings and Loans by checking if Savings<2000
+(#N) Categorize every entity_id economic status as [ Excellent, Good, Moderate, Average, Poor ] by setting ranges for each category
+(#P) Performed metric level analysis of the model by plotting confusion matrix, calculating TP,FP,TN,FN and Accuracy
+
+
+2.3 Prediction model:
+(#O)
+In our approach for prediction, we have used multinomial Logistic regression. Logistic regression is one of the most popular supervised classification algorithm. This classification algorithm mostly used for solving binary classification problems. However, Logistic regression algorithm can also use to solve the multi-classification problems. They all have in common a dependent variable to be predicted that comes from one of a limited set of items that cannot be meaningfully ordered, as well as a set of independent variables also known as features, which are used to predict the dependent variable.
+In our case, we have a dataset of 50,000 entities (rows) with 10 features ('Entity_ID', 'City', 'Marital Status', 'Education', 'Gender', 'Dependencies', 'Entity’s Income', 'Entity’s Family Income','Average Expenditure per Entity per Month','Total Income of Entity's Family') that are categorised into 5 classes (‘Excellent’, ‘Good’, ‘Moderate’, ‘Average’, ‘Poor’). This category is called ‘Economic Status’. We have assigned a numeric corresponding label to ‘Economic Status’ called ‘Label’. 
+
+
+The string values in dataframe are converted to integer values before feeding it into the regression model. The data is split into 80% training and 20% testing portions. 
+The Logistic regression model is instantiated with the following parameters: C=1, solver='sag', multi_class='multinomial'. Here, C is the inverse of regularization strength, solver is the algorithm to use in the optimization problem (For multiclass problems, only ‘newton-cg’, ‘sag’, ‘saga’ and ‘lbfgs’ handle multinomial loss), and multi_class specifies whether binary or multinomial. Finally, we fit the model with data to obtain predicted value.
+
+
+Confusion matrix is found for the 10000 values that are predicted. True Positive (TP), False Positive (FP), True Negative (TN), False Negative (FN) is found and accuracy of the model is calculated. Furthermore, the accuracy values of prediction of the 5 economic classes are calculated. The model accuracy turns out to be 94.92%.
