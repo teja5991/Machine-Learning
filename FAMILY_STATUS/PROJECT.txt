@@ -1,0 +1,85 @@
+AIM
+
+To find the family status of a particular entity based on his lifestyle of living
+
+CONCEPT
+
+Basically this project does not have any prepared dataset so we generate a dataset of 50000 rows randomly using random function so 
+once we generatea random dataset with all the required attributes we convert the obtained dataset to a csv file and then use that 
+dataset for the prediction of the model which is nothing but predicting family status of the particular entity 
+
+PREPARATION OF DATASET
+
+Dataset has mainly 15 attributes the attributes are
+entity_id
+city
+marital_status
+education
+gender
+dependencies
+entity_income
+entity_family_income
+average_expenditure_per_month
+total_income_of_entity_family
+savings
+car_loan
+house_loan
+family status
+family_status_label
+
+for some of the attributes we generate the data randomly. for the following attributes we generate the data randomly and the data is 
+generated with the help of applying a random technique to it.
+To choose an option to enter data for a feature is  by tossing the coin. If the Coin turns out to be head, then roll a dice with 
+number of faces equal to the number of options a feature can take in case of a tail enter a predefined option
+
+the attributes for which we apply this technique are
+city
+marital_status
+education
+gender
+dependencies
+entity_income
+
+WORKING OF ATTRIBUTES
+
+for city attribute we had predefined few cities which are A,B,C,D and if the entites are living in those cities we had predifined the
+expenditure of that city per month the values are
+city A = 15000
+city B = 10000
+city C = 5000
+city D = 2500
+so it will randomly genearte the city to all the 50000 entities
+
+for marital status attribute we had already predefined as either married or unmarried so it will only assign these two values to all
+the 50000 entities randomly
+
+for education attribute we had predefined into 4 types PG,UG,Phd,Not educated so in these 4 values only it will assign the values to
+all the 50000 entities randomly
+
+for gender we had predefined already as either male or female so it will only assign these two values to all the 50000 entities 
+randomly
+
+for dependents attributes we had prefined range of 5 so it will generate any value from 0 to 5 and it will assign any of these values
+to the 50000 entites randomly
+
+for entity_income attribute the value is generated in range of starting 10000 to 2000000 it can assign any value to all the 50000 
+entities
+
+for entity_family_income attribute the value is generated in range of starting 10000 to 1000000 it can assign any value to all the 50000 
+entities
+
+for average_expenditure_per_month attribute is based on the values in which city they are living
+
+for total_income_entity_family attribute is the combination of entity_income + entity_family_income
+
+for savings attribute it is total_entity_family_income - average_expenditure_per_month
+
+for car_loan attribute if the entity savings is more than 50000 then he can take car loan 
+
+for house_loan attribute if the entity savings is more than 100000 then he can take home loan
+
+
+OUTPUT
+
+since feeding all the attributes as X and the family_status_label as Y we will be able to predict the family status of that particular
+entity
